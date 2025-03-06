@@ -1,0 +1,94 @@
+"use client";
+import React, { useState } from "react";
+import { useRecipes } from "@/context/recipesContext";
+import Image from "next/image";
+
+export default function Form() {
+  const { setRecipes } = useRecipes();
+  const [count, setCount] = useState(3);
+  const [isVegetarian, setIsVegetarian] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    try {
+      const response = await fetch(
+        `/api/recipes?count=${count}&vegetarian=${isVegetarian}`
+      );
+      if (!response.ok) {
+        throw new Error("Erreur lors de la récupération des recettes");
+      }
+      const data = await response.json();
+      setRecipes(data.recettes);
+    } catch (err) {
+      console.error(err);
+      setError("Erreur lors de la récupération des recettes");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+      <h3 className="text-2xl font-bold text-gray-800 mb-4">
+        Étape 1 : Je choisis mes recettes 🍔🍕💡
+      </h3>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <div className="flex flex-col">
+          <label className="font-medium text-gray-700">
+            Nombre de recettes
+          </label>
+          <input
+            type="number"
+            min="1"
+            max="10"
+            value={count}
+            onChange={(e) => setCount(Number(e.target.value))}
+            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={isVegetarian}
+            onChange={(e) => setIsVegetarian(e.target.checked)}
+            className="h-5 w-5 text-blue-600"
+          />
+          <label className="text-gray-700 font-medium">
+            Végétarien uniquement
+          </label>
+        </div>
+        <button
+          type="submit"
+          className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+        >
+          C&apos;est parti !
+        </button>
+      </form>
+      {loading && (
+  <div className="flex flex-col justify-center items-center h-40 mt-4">
+    <Image
+      src="/loader.gif"
+      alt="Chargement"
+      width={50}
+      height={50}
+      className="w-full h-auto animate-spin"
+    />
+    <p className="mt-2 text-gray-600 text-sm">Chargement en cours...</p>
+  </div>
+)}
+{error && (
+  <div className="flex justify-center items-center h-40 mt-4">
+    <p className="text-red-500 text-sm">{error}</p>
+  </div>
+)}
+
+    </div>
+  );
+}
+
+/*<div className="flex justify-center items-center h-32">
+<img src="/loader.gif" alt="Chargement" className="w-12 h-12 animate-spin" />*/

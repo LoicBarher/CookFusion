@@ -1,0 +1,531 @@
+{
+  "recettes": [
+    {
+      "id": 1,
+      "photo": "/images/Epinards-et-tomates-1--353x431.webp",
+      "titre": "Spaghetti aux épinards, tomates et oeufs mollets",
+      "ingredients": {
+        "sphaghetti": "400 g",
+        "ail": "4 gousses",
+        "épinard": "300 g",
+        "tomates cerises": "200 g",
+        "oeuf": 4,
+        "parmesan en lamelles": "4 càs",
+        "condiments": "sel, gros sel, poivre, thym, piment d'espelette"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2024/06/spaghetti-aux-epinards-tomates-et-oeufs-mollets.html/"
+    },
+    {
+      "id": 2,
+      "photo": "/images/Cotes-de-porc-et-pommes-de-terre-sauce-BBQ-a-lEasy-Fry-2--353x431.webp",
+      "titre": "Côtes de porc et pommes de terre, sauce BBQ, à l’Air Fryer",
+      "ingredients": {
+        "pommes de terre": 10,
+        "côtes de porc": 4,
+        "cheddar": "50 g",
+        "condiments": "paprika, sel, piment d'espelette, huile d'olive, sauce BBQ"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2024/05/cotes-de-porc-et-pommes-de-terre-sauce-bbq-a-lair-fryer.html/"
+    },
+    {
+      "id": 3,
+      "photo": "/images/Orzo-petits-pois-3--353x431.webp",
+      "titre": "Orzo aux asperges vertes, petits pois, citron et menthe",
+      "ingredients": {
+        "orzo": "120 g",
+        "petit pois": "220 g",
+        "citron": 1,
+        "ail": "2 gousses",
+        "asperges": 6,
+        "oignons": 2,
+        "condiments": "huile d'olive, sel, poivre, menthe, persil"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2024/05/orzo-aux-asperges-vertes-petits-pois-citron-et-menthe.html/"
+    },
+    {
+      "id": 4,
+      "photo": "/images/Riz-saute-au-poulet-dans-bol-4--353x431.webp",
+      "titre": "Riz sauté au poulet",
+      "ingredients": {
+        "carottes": 2,
+        "oignons": 2,
+        "ail": "4 gousses",
+        "poulet": "360 g",
+        "oeuf": 4,
+        "riz": "400 g",
+        "condiments": "sauce soja, sauce huître, sauce sriracha, ciboulette"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2024/05/riz-saute-au-poulet-une-recette-asiatique-facile.html/"
+    },
+    {
+      "id": 5,
+      "photo": "/images/Huevos-rancheros-5--353x431.webp",
+      "titre": "Huevos rancheros",
+      "ingredients": {
+        "oignons": 1,
+        "poivron rouge": 1,
+        "tomates": 2,
+        "oeuf": 4,
+        "tortillas": 4,
+        "avocats": 2,
+        "condiments": "huile d'olive, cumin, sel, piment d'espelette, dés de feta, persil, coriandre"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2024/05/huevos-rancheros-une-recette-mexicaine-facile-et-delicieuse.html/"
+    },
+    {
+      "id": 6,
+      "photo": "/images/Chou-fleur-roti-au-four-condiment-aux-capres-yaourt-6--353x431.webp",
+      "titre": "Chou-fleur rôti au four, condiment aux câpres, yaourt et ail",
+      "ingredients": {
+        "chou-fleur": 2,
+        "citron": 2,
+        "pistaches": "60 g",
+        "yaourt grec": "250 g",
+        "condiments": "poudre de coriandre, huile d'olive, sel, poivre, câpres, persil, aneth, piment de cayenne"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2024/04/chou-fleur-roti-au-four-condiment-aux-capres-yaourt-et-ail.html/"
+    },
+    {
+      "id": 7,
+      "photo": "/images/Escalopes-et-pommes-de-terre-7--353x431.webp",
+      "titre": "Escalopes de poulet, pommes de terre épicées à l’Air Fryer",
+      "ingredients": {
+        "escalopes de poulet": 2,
+        "tranches de lard fumé": 7,
+        "pommes de terre": 8,
+        "cheddar": "40 g",
+        "condiments": "paprika, huile d'olive, piment d'espelette, sel, sauce BBQ"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2024/04/escalopes-de-poulet-pommes-de-terre-epicees-a-lair-fryer.html/"
+    },
+    {
+      "id": 8,
+      "photo": "/images/Pates-au-saumon-8--353x431.webp",
+      "titre": "Pâtes au saumon",
+      "ingredients": {
+        "penne": "400 g",
+        "saumon": "300 g",
+        "crème fraîche": "250 ml",
+        "vin blanc": "100 ml",
+        "condiments": "gros sel, échalote, sel, beurre, huile d'olive, persil"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2024/04/comment-faire-des-pates-au-saumon-recette-facile.html/"
+    },
+    {
+      "id": 9,
+      "photo": "/images/Gratin-epinards-9--353x431.webp",
+      "titre": "Gratin d’épinards, pommes de terre et haddock",
+      "ingredients": {
+        "filet de haddock": "200 g",
+        "lait": "225 ml",
+        "feuilles d'épinards": "600 g",
+        "pommes de terre": 2,
+        "oeuf": 1,
+        "fromage faisselle": "100 g",
+        "pignons de pin": "15 g",
+        "condiments": "crème fraîche, thym, muscade, parmesan"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2024/03/gratin-depinards-pommes-de-terre-et-haddock.html/"
+    },
+    {
+      "id": 10,
+      "photo": "/images/Joues-de-boeuf-a-la-biere-10-353x431.webp",
+      "titre": "Joues de bœuf à la bière",
+      "ingredients": {
+        "joues de boeuf": "1000 g",
+        "carottes": 5,
+        "céleri": "0.5 branches",
+        "oignons": 1.5,
+        "ail": "2 gousses",
+        "bière brune": "220 ml",
+        "condiments": "huile d'olive, thym, laurier, sucre cassonnade, farine, sel"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2024/02/joues-de-boeuf-a-la-biere-un-delicieux-plat-mijote.html/"
+    },
+    {
+      "id": 11,
+      "photo": "/images/Risotto-aux-epinards-et-au-parmesan-11--353x431.webp",
+      "titre": "Risotto aux épinards et au Parmesan",
+      "ingredients": {
+        "riz à risotto": "250 g",
+        "échalote": 1,
+        "épinards": "250 g",
+        "vin blanc": "75 ml",
+        "bouillon de légumes": "1000 ml",
+        "condiments": "huile d'olive, parmesan"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2024/02/risotto-aux-epinard-et-parmesan.html/"
+    },
+    {
+      "id": 12,
+      "photo": "/images/Lentilles-dahl-BD-12--353x431.webp",
+      "titre": "Dahl de lentilles vertes aux épices douces, épinards et feta",
+      "ingredients": {
+        "oignons": 1,
+        "ail": "3 gousses",
+        "lentilles": "180 g",
+        "tomates concassées": "400 ml",
+        "feuilles d'épinards": "100 g",
+        "condiments": "huile d'olive, gingembre, cumin, grains de poivre, garam massala, graines de moutarde, piment d'espelette, sel, dés de feta"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2024/02/dahl-de-lentilles-vertes-aux-epices-douces-epinards-et-feta.html/"
+    },
+    {
+      "id": 13,
+      "photo": "/images/Filet-mignon-en-sauce-13--353x431.webp",
+      "titre": "Filet mignon au miel, aux oignons et au gingembre",
+      "ingredients": {
+        "filet mignon de porc": "700 g",
+        "oignons": 1,
+        "ail": "3 gousses",
+        "miel": "60 g",
+        "vinaigre de vin rouge": "50 ml",
+        "vin blanc": "200 ml",
+        "bouillon de volaille": "100 ml",
+        "condiments": "huile d'olive, gingembre, gingembre en poudre, thym, piment de cayenne"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2024/01/filet-mignon-au-miel-aux-oignons-et-au-gingembre.html/"
+    },
+    {
+      "id": 14,
+      "photo": "/images/Cullen-Skink-14--353x431.webp",
+      "titre": "Cullen Skink",
+      "ingredients": {
+        "oignons": 1,
+        "pommes de terre": 2,
+        "haddock": "170 g",
+        "lait entier": "325 ml",
+        "condiments": "beurre, persil, ciboulette"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2024/01/cullen-skink-la-delicieuse-soupe-ecossaise-au-poisson-fume.html/"
+    },
+    {
+      "id": 15,
+      "photo": "/images/Pot-au-feu-15--353x431.webp",
+      "titre": "Pot au feu à la cocotte minute®",
+      "ingredients": {
+        "viande de boeuf": "800 g",
+        "poireaux": 2,
+        "carottes": 4,
+        "navets": 3,
+        "céleri": "0.5 branches",
+        "pommes de terre": 4,
+        "condiments": "gros sel"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2024/01/pot-au-feu-a-la-cocotte-minute.html/"
+    },
+    {
+      "id": 16,
+      "photo": "/images/Jarret-de-boeuf-mijote-aux-carottes-et-aux-navets-16--353x431.webp",
+      "titre": "Jarret de boeuf mijoté aux carottes et aux navets",
+      "ingredients": {
+        "jarret de boeuf": "800 g",
+        "lardons": "135 g",
+        "oignons": 1,
+        "carottes": 5,
+        "navets": 3,
+        "condiments": "huile d'olive, sel, thym, laurier, poivre, persil"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/11/jarret-de-boeuf-mijote-aux-carottes-et-aux-navets.html/"
+    },
+    {
+      "id": 17,
+      "photo": "/images/Curry-de-patates-douces-17--353x431.webp",
+      "titre": "Curry de patates douces, épinards et pois chiches",
+      "ingredients": {
+        "oignons": 2,
+        "ail": "2 gousses",
+        "patates douces": "800 g",
+        "lait de coco": "20 cl",
+        "feuilles d'épinards": "150 g",
+        "pois chiches": "160 g",
+        "condiments": "huile d'olive, gingembre, curry en poudre, noix de cajou"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2023/11/curry-de-patates-douces-epinards-et-pois-chiches.html/"
+    },
+    {
+      "id": 18,
+      "photo": "/images/Joues-de-porc-18--353x431.webp",
+      "titre": "Joues de porc aux olives et aux carottes",
+      "ingredients": {
+        "joues de porc": "700 g",
+        "oignons": 0.5,
+        "céleri": "0.5 branches",
+        "ail":"1.5 gousses",
+        "jus d'orange": "75 ml",
+        "farine": "5 g",
+        "olives vertes": "60 g",
+        "carottes": 6,
+        "condiments": "huile d'olive, sel, citron confit, thym, persil"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/11/joues-de-porc-aux-olives-et-aux-carottes.html/"
+    },
+    {
+      "id": 19,
+      "photo": "/images/Chorba-19--353x431.webp",
+      "titre": "Chorba algérienne",
+      "ingredients": {
+        "pois chiche": "100 g",
+        "viande d'agneau": "650 g",
+        "oignons": 4,
+        "céleri": "2 branches",
+        "tomates": 4,
+        "carottes": 5,
+        "pommes de terre": 3,
+        "navets": 1,
+        "courgette": 1,
+        "citron": 1,
+        "condiments": "sel, gingembre en poudre, paprika, ras el hanout, curcuma, concentré de tomates, huile d'olive, coriandre, soupe de vermicelle, menthe, persil"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/10/chorba-algerienne-une-soupe-savoureuse-et-reconfortante.html/"
+    },
+    {
+      "id": 20,
+      "photo": "/images/Poulet-raisins-thym-echalotes-20--353x431.webp",
+      "titre": "Cuisses de poulet au four, raisins, thym et échalotes",
+      "ingredients": {
+        "cuisses de poulet": 4,
+        "ail": "4 gousses",
+        "échalote": 8,
+        "grains de raisins": 80,
+        "condiments": "huile d'olive, zaatar, sel, poivre, thym"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/10/cuisses-de-poulet-au-four-raisins-thym-et-echalotes.html/"
+    },
+    {
+      "id": 21,
+      "photo": "/images/Hachi-parmentier-traditionnel-cugnaux-21--353x431.webp",
+      "titre": "Hachis parmentier traditionnel de Cugnaux",
+      "ingredients": {
+        "pommes de terre": 5,
+        "viande de boeuf haché": "400 g",
+        "carottes": 2,
+        "oignons": 2,
+        "ail":"2 gousses",
+        "crème liquide": "10 cl",
+        "fromage râpé": "100 g",
+        "condiments": "huile d'olive, sel, poivre, thym, beurre, muscade"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.lespommesdeterre.com/recette/hachis-parmentier-traditionnel/"
+    },
+    {
+      "id": 22,
+      "photo": "/images/Loubia-22-353x431.webp",
+      "titre": "Loubia - Boeuf mijoté aux haricots blanc parfumé aux épices",
+      "ingredients": {
+        "boeuf pour bourguignon": "400 g",
+        "haricots blancs": "250 g",
+        "oignons": 1,
+        "coulis de tomates": "206 ml",
+        "carottes": 3,
+        "céleri": "1 branches",
+        "ail": "2 gousses",
+        "condiments": "huile d'olive, concentré de tomates, laurier, gingembre moulu, cumin moulu, sel, poivre, persil"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/10/loubia-boeuf-mijote-aux-haricots-blanc-parfume-aux-epices.html/"
+    },
+    {
+      "id": 23,
+      "photo": "/images/Lasagnes-saumon-epinards--23-353x431.webp",
+      "titre": "Lasagnes au saumon, aux épinards et à la ricotta",
+      "ingredients": {
+        "feuilles de lasagnes fraîches": "250 g",
+        "feuilles d'épinard": "800 g",
+        "ricotta": "500 g",
+        "pavés de saumon": "420 g",
+        "mozzarella râpée": "180 g",
+        "beurre": "50 g",
+        "farine": "50 g",
+        "lait": "650 ml",
+        "condiments": "huile d'olive, piment d'espelette, sel, bouillon Kub, parmesan"
+      },
+      "personnes": 8,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/10/lasagnes-au-saumon-aux-epinards-et-a-la-ricotta.html/"
+    },
+    {
+      "id": 24,
+      "photo": "/images/Gratin-de-pommes-de-terre-aubergines-tomates-24--353x431.webp",
+      "titre": "Gratin d'aubergines aux pommes de terre et tomates",
+      "ingredients": {
+        "aubergines": "500 g",
+        "pommes de terre": "500 g",
+        "tomates": 6,
+        "oignons": 2,
+        "mozzarella râpée": "150 g",
+        "Parmesan en poudre": "4 cuillères à soupe",
+        "herbes de Provence": "2 cuillères à soupe",
+        "condiments": "huile d'olive, sauce sriracha, sel, herbes de provence, parmesan"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2023/09/gratin-daubergines-aux-pommes-de-terre-et-tomates.html/"
+    },
+    {
+      "id": 25,
+      "photo": "/images/Croque-madame-Copyright-Stepanek-Photography-shutterstock-25--353x431.webp",
+      "titre": "Croque-Madame - Le croque-monsieur avec un œuf au plat",
+      "ingredients": {
+        "oeufs": 4,
+        "beurre": "35 g",
+        "pain de mie": "8 tranches",
+        "jambon blanc": "2 tranches",
+        "Emmental": "4 tranches",
+        "lait": "250 ml",
+        "farine": "25 g",
+        "condiments": "sel, poivre"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/03/croque-madame-le-croque-monsieur-avec-un-oeuf-au-plat.html/"
+    },
+    {
+      "id": 26,
+      "photo": "/images/Poulet-cuit-BD-26--353x431.webp",
+      "titre": "Poulet fermier aux épices et oignons rouges",
+      "ingredients": {
+        "poulet": "1000 g",
+        "oignons rouges": 2,
+        "poivrons": 2,
+        "ail": "5 gousses",
+        "citron": 1,
+        "condiments": "huile d'olive, vinaigre de cidre, paprika, cumin, sel, poivre, persil"
+      },
+      "personnes": 6,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/03/poulet-fermier-aux-epices-et-oignons-rouges.html/"
+    },
+    {
+      "id": 27,
+      "photo": "/images/Gratin-de-pâtes-Copyright-leoslo-CC-BY-NC-ND-2.0-27--353x431.webp",
+      "titre": "Gratin de pâtes - Recette facile",
+      "ingredients": {
+        "pâtes": "300 g",
+        "fromage râpé": "100 g",
+        "beurre": "40 g",
+        "farine": "30 g",
+        "lait": "300 ml",
+        "crème fleurette": "300 ml",
+        "condiments": "sel, poivre, noix de muscade, thym, chapelure"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2023/03/comment-faire-un-gratin-de-pates-recette-facile.html/"
+    },
+    {
+      "id": 28,
+      "photo": "/images/Soupe-de-légumes-et-veau-28--353x431.webp",
+      "titre": "Soupe de légumes d'hiver et jarret de veau",
+      "ingredients": {
+        "jarret de veau": 1,
+        "carottes": 5,
+        "oignons": 1,
+        "céleri": "1 branches",
+        "navets": 2,
+        "poireaux": 2,
+        "condiments": "huile d'olive, sel, poivre, concentré de tomates"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/02/soupe-de-legumes-dhiver-et-jarret-de-veau.html/"
+    },
+    {
+      "id": 29,
+      "photo": "/images/Saumon-epinards-et-patates-douces-29--353x431.webp",
+      "titre": "Pavés de saumon, épinards et patates douces",
+      "ingredients": {
+        "pavés de saumon": 4,
+        "bottes d'épinards": 4,
+        "patates douces": 2,
+        "citron": 1,
+        "condiments": "huile d'olive, sel, parmesan, crème liquide"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/02/paves-de-saumon-epinards-et-patates-douces.html/"
+    },
+    {
+      "id": 30,
+      "photo": "/images/Marmite-de-poisson-2-30--353x431.webp",
+      "titre": "Marmite de poissons à la tomate, pommes de terre et oignons",
+      "ingredients": {
+        "darnes de congre": "375 g",
+        "filet de merlan": "170 g",
+        "oignons": 1,
+        "ail": "3 gousses",
+        "tomates concassées": "210 g",
+        "vin blanc": "50 ml",
+        "pommes de terre à chair ferme": "450 g",
+        "safran": "3 pistils",
+        "bouillon de volaille": "600 ml",
+        "citron": 1,
+        "condiments": "huile d'olive, sel, nuoc mam, 4 épices, paprika, poivre, piment d'espelette, laurier, thym, persil, maizena"
+      },
+      "personnes": 4,
+      "vegetarien": false,
+      "lien": "https://www.papillesetpupilles.fr/2023/01/marmite-de-poissons-a-la-tomate-pommes-de-terre-et-oignons.html/"
+    },
+    {
+      "id": 31,
+      "photo": "/images/Risotto-aux-poireaux-et-aux-morilles-31--353x431.webp",
+      "titre": "Risotto aux poireaux et aux morilles",
+      "ingredients": {
+        "blancs de poireaux": 4,
+        "échalotes": 2,
+        "riz à risotto": "400 g",
+        "vin blanc": "100 ml",
+        "bouillon de légumes": "2000 ml",
+        "Parmesan râpé": "100 g",
+        "morilles séchées": "30 g",
+        "condiments": "huile d'olive, sel, poivre; thym, persil, crème fraiche, parmesan"
+      },
+      "personnes": 4,
+      "vegetarien": true,
+      "lien": "https://www.papillesetpupilles.fr/2022/12/risotto-aux-poireaux-et-aux-morilles.html/"
+    }    
+  ]
+}
