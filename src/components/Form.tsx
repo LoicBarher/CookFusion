@@ -5,16 +5,17 @@ import Image from "next/image";
 
 export default function Form() {
   const { setRecipes } = useRecipes();
-  const [count, setCount] = useState(3);
-  const [isVegetarian, setIsVegetarian] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [count, setCount] = useState<string>("3");
+  const [isVegetarian, setIsVegetarian] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
     try {
+      console.log(`Fetching /api/recipes?count=${count}&vegetarian=${isVegetarian}`);
       const response = await fetch(
         `/api/recipes?count=${count}&vegetarian=${isVegetarian}`
       );
@@ -42,11 +43,16 @@ export default function Form() {
             Nombre de recettes
           </label>
           <input
-            type="number"
-            min="1"
-            max="10"
-            value={count}
-            onChange={(e) => setCount(Number(e.target.value))}
+          type="number"
+          min="1"
+          max="10"
+          value={count}
+          onChange={(e) => setCount(e.target.value)}
+          onBlur={(e) => {
+            if (e.target.value.trim() === "" || Number(e.target.value) < 1) {
+              setCount("1");
+            }
+          }}
             className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -69,19 +75,19 @@ export default function Form() {
         </button>
       </form>
       {loading && (
-  <div className="flex flex-col justify-center items-center h-40 mt-4">
+  <div className="flex flex-col justify-center items-center mt-4">
     <Image
       src="/loader.gif"
       alt="Chargement"
-      width={50}
-      height={50}
-      className="w-full h-auto animate-spin"
+      width={48}
+      height={48}
+      className="animate-spin"
     />
     <p className="mt-2 text-gray-600 text-sm">Chargement en cours...</p>
   </div>
 )}
 {error && (
-  <div className="flex justify-center items-center h-40 mt-4">
+  <div className="flex justify-center items-center mt-4">
     <p className="text-red-500 text-sm">{error}</p>
   </div>
 )}

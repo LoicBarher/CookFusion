@@ -1,31 +1,41 @@
-import fs from "fs";
-import path from "path";
+import { createClient } from "@supabase/supabase-js"
 import { Recipe } from "@/context/recipesContext";
 
-export function getRecipes(): Recipe[] {
-  const filePath = path.join(process.cwd(), "src", "data", "recipes.json");
-  const jsonData = fs.readFileSync(filePath, "utf8");
-  const data = JSON.parse(jsonData);
-  return data.recettes;
-}
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY!;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-function shuffleArray<T>(array: T[]): T[] {
-  let currentIndex = array.length, randomIndex;
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-  }
-  return array;
-}
+// export async function getRecipes(): Promise<Recipe[]> {
+//   const { data, error } = await supabase
+//     .from("recettes")
+//     .select("*");
 
-export function getFilteredRecipes(count: number, isVegetarian: boolean): Recipe[] {
-  let recipes = getRecipes();
+//     if (error) {
+//       console.error("Erreur lors de la récupération des recettes", error);
+//       return [];
+//     }
+
+//     return data as Recipe[];
+// }
+
+export async function getFilteredRecipes(count: number, isVegetarian: boolean): Promise <Recipe[]> {
+  let query = supabase
+    .from("recettes")
+    .select("*");
+  
   if (isVegetarian) {
-    recipes = recipes.filter(recipe => recipe.vegetarien);
+    query = query.eq("vegetarien", true);
   }
   
-  recipes = shuffleArray(recipes);
-
+  const { data, error } = await query;
+  console.log("data", data);
+  if(error) {
+    console.error("Erreur lors de la récupération des recettes filtrées", error);
+    return [];
+  }
+  
+  const recipes = data as Recipe[];
+  
+  recipes.sort(() => Math.random() - 0.5);
   return recipes.slice(0, count);
 }
