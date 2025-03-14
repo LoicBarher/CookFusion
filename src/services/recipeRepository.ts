@@ -1,9 +1,5 @@
-import { createClient } from "@supabase/supabase-js"
 import { Recipe } from "@/context/recipesContext";
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY!;
-const supabase = createClient(supabaseUrl, supabaseKey);
+import { supabase } from "@/lib/supabaseClient";
 
 // export async function getRecipes(): Promise<Recipe[]> {
 //   const { data, error } = await supabase

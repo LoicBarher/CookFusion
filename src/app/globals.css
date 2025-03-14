@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Pour empêcher les images des boutons actifs d'être masquées */
+a.active img {
+  filter: brightness(0.75);
+  transition: all 0.3s;
+}

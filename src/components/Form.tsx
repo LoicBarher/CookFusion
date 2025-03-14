@@ -69,9 +69,9 @@ export default function Form() {
         </div>
         <button
           type="submit"
-          className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+          className="self-center bg-blue-600 text-white py-2 px-4 min-w-[150px] rounded hover:bg-blue-700 transition-colors"
         >
-          C&apos;est parti !
+          {"C'est parti !"}
         </button>
       </form>
       {loading && (
