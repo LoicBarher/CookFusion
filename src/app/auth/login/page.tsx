@@ -4,6 +4,8 @@ import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/context/authContext";
+import EmailInput from "@/components/EmailInput";
+import PasswordInput from "@/components/PasswordInput";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -29,13 +31,13 @@ export default function LoginPage() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrorMsg(null);
-    
-    // On vérifie que l'email est correctement formaté avant d'envoyer la requête
+
+    // Vérifie que l'email est correctement formaté
     if (!emailValid) {
       setErrorMsg("Veuillez saisir un email correctement formaté.");
       return;
     }
-    
+
     setSubmitting(true);
     try {
       const { error } = await signIn({ email, password });
@@ -56,9 +58,8 @@ export default function LoginPage() {
     }
   };
 
-  /* Attente prochaine version
   const handleResendConfirmation = async () => {
-    // Vérifie que l'email est renseigné et valide avant d'envoyer la requête
+    // Vérifie que l'email est renseigné et valide
     if (!email || !emailValid) {
       setErrorMsg("Veuillez saisir un email correctement formaté pour renvoyer la notification.");
       return;
@@ -80,40 +81,21 @@ export default function LoginPage() {
       console.error("Resend error:", err);
       setErrorMsg("Erreur lors de l'envoi de la demande de confirmation.");
     }
-  }; */
+  };
 
   return (
-    <div className="max-w-md mx-auto mt-8 bg-white p-6 rounded-lg shadow-md">
-      <h1 className="text-2xl font-bold mb-4">Se connecter</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <div className="max-w-md mx-auto mt-2 bg-white p-6 rounded-lg shadow-md">
+      <h1 className="text-2xl font-bold text-blue-800 mb-6">Se connecter</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         {/* Email */}
-        <div className="flex flex-col">
-          <label className="block mb-1 text-sm font-medium">
-            Email{" "}
-            {emailValid === true && <span className="text-green-500">✅</span>}
-            {emailValid === false && <span className="text-red-500">❌</span>}
-          </label>
-          <input
-            type="email"
-            placeholder="Votre adresse e-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="border p-2 rounded w-full focus:outline-none focus:ring-1 focus:ring-blue-600 placeholder:text-xs"
-          />
-        </div>
-        {/* Mot de passe */}
-        <div className="flex flex-col">
-          <label className="block mb-1 text-sm font-medium">Mot de passe</label>
-          <input
-            type="password"
-            placeholder="Votre mot de passe"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="border p-2 rounded w-full focus:outline-none focus:ring-1 focus:ring-blue-600 placeholder:text-xs"
-          />
-        </div>
+        <EmailInput value={email} onChange={setEmail} label="Email" />
+        {/* Password */}
+        <PasswordInput
+          value={password}
+          onChange={setPassword}
+          label="Mot de passe"
+          placeholder="Votre mot de passe"
+        />
         {errorMsg && <p className="text-red-500 text-sm">{errorMsg}</p>}
         <button
           type="submit"
@@ -126,7 +108,7 @@ export default function LoginPage() {
         </button>
       </form>
       <div className="mt-4 text-center">
-        <button onClick={()=> true/*handleResendConfirmation*/} className="text-blue-600 underline">
+        <button onClick={handleResendConfirmation} className="text-blue-600 underline">
           Renvoyer l’e-mail de confirmation
         </button>
       </div>

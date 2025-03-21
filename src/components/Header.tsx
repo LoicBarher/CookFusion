@@ -76,7 +76,7 @@ export default function Header() {
         ) : (
           <div className="flex items-center gap-2">
             {/* Bonjour user (texte masqué en mobile) */}
-            <span className="hidden sm:inline-block text-sm font-medium">
+            <span className="hidden sm:inline-block text-base font-medium">
               Bonjour, {user.username || user.email} 👋
             </span>
             {/* Se déconnecter (bouton) */}

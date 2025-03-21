@@ -2,15 +2,14 @@
 
 import { useEffect, useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { useAuth } from "@/context/authContext";
+import EmailInput from "@/components/EmailInput";
+import PasswordInput from "@/components/PasswordInput";
 
-// Regex de validation pour le format uniquement
+// Regex de validation pour le username et le password
 const USERNAME_REGEX = /^[a-zA-Z0-9]{6,25}$/;
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PASSWORD_REGEX = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,25}$/;
 
-// Fonction d'appel à l'API Route pour vérifier l'unicité (appelée à la soumission)
 async function checkUnique(field: "email" | "username", value: string): Promise<boolean> {
   if (!value) return true;
   try {
@@ -33,15 +32,10 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  // États de validation de format (sans unicité)
+  // États de validation
   const [usernameValid, setUsernameValid] = useState<boolean | null>(null);
-  const [emailValid, setEmailValid] = useState<boolean | null>(null);
   const [passwordValid, setPasswordValid] = useState<boolean | null>(null);
   const [repeatPasswordValid, setRepeatPasswordValid] = useState<boolean | null>(null);
-
-  // Affichage/masquage du password
-  const [showPassword, setShowPassword] = useState(false);
-  const [showRepeatPassword, setShowRepeatPassword] = useState(false);
 
   // Feedback global
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -58,15 +52,6 @@ export default function RegisterPage() {
     }
     setUsernameValid(USERNAME_REGEX.test(username));
   }, [username]);
-
-  // Validation du format de l'email
-  useEffect(() => {
-    if (!email) {
-      setEmailValid(null);
-      return;
-    }
-    setEmailValid(EMAIL_REGEX.test(email));
-  }, [email]);
 
   // Validation du format du password
   useEffect(() => {
@@ -94,7 +79,7 @@ export default function RegisterPage() {
 
     try {
       // Vérification finale du format
-      if (!usernameValid || !emailValid || !passwordValid || !repeatPasswordValid) {
+      if (!usernameValid || !email || !passwordValid || !repeatPasswordValid) {
         setErrorMsg("Veuillez corriger les erreurs de format dans le formulaire.");
         return;
       }
@@ -107,7 +92,7 @@ export default function RegisterPage() {
         return;
       }
 
-      // Appel à signUp
+      // Appel à signUp (fonction dans AuthContext)
       const { error } = await signUp({
         email,
         password,
@@ -122,7 +107,6 @@ export default function RegisterPage() {
         return;
       }
       setSuccessMsg("Un e-mail de confirmation vous a été envoyé. Veuillez vérifier votre boîte mail.");
-      // Redirection après 3 secondes
       setTimeout(() => {
         router.push("/auth/login");
       }, 3000);
@@ -135,12 +119,12 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 bg-white p-6 rounded-lg shadow-md">
-      <h1 className="text-2xl font-bold mb-4">Créer un compte</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <div className="max-w-md mx-auto mt-2 bg-white p-6 rounded-lg shadow-md">
+      <h1 className="text-2xl font-bold text-blue-800 mb-6">Créer un compte</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         {/* Username */}
         <div>
-          <label className="block mb-1 text-sm font-medium">
+          <label className="text-sm font-medium text-gray-700">
             {"Nom d'utilisateur"}{" "}
             {usernameValid === true && <span className="text-green-500">✅</span>}
             {usernameValid === false && <span className="text-red-500">❌</span>}
@@ -154,97 +138,29 @@ export default function RegisterPage() {
             required
           />
         </div>
-
         {/* Email */}
-        <div>
-          <label className="block mb-1 text-sm font-medium">
-            Email{" "}
-            {emailValid === true && <span className="text-green-500">✅</span>}
-            {emailValid === false && <span className="text-red-500">❌</span>}
-          </label>
-          <input
-            type="email"
-            placeholder="Votre adresse e-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="border p-2 rounded w-full focus:outline-none focus:ring-1 focus:ring-blue-600 placeholder:text-xs"
-            required
-          />
-        </div>
-
-        {/* Mot de passe */}
-        <div>
-          <label className="block mb-1 text-sm font-medium">
-            Mot de passe{" "}
-            {passwordValid === true && <span className="text-green-500">✅</span>}
-            {passwordValid === false && password !== "" && <span className="text-red-500">❌</span>}
-          </label>
-          <div className="relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="6-25 caractères, 1 chiffre, 1 caractère spécial"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="border p-2 rounded w-full pr-10 focus:outline-none focus:ring-1 focus:ring-blue-600 placeholder:text-xs"
-              required
-            />
-            <button
-              type="button"
-              tabIndex={-1}
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-0 pr-2 flex items-center"
-            >
-              <Image
-                src={showPassword ? "/images/svg/password-eyes-on.svg" : "/images/svg/password-eyes-off.svg"}
-                alt="Afficher/Cacher"
-                width={20}
-                height={20}
-              />
-            </button>
-          </div>
-        </div>
-
+        <EmailInput value={email} onChange={setEmail} label="Email" />
+        {/* Password */}
+        <PasswordInput
+          value={password}
+          onChange={setPassword}
+          label="Mot de passe"
+          placeholder="6-25 caractères, 1 chiffre, 1 caractère spécial"
+        />
         {/* Repeat Password */}
-        <div>
-          <label className="block mb-1 text-sm font-medium">
-          Confirmer le mot de passe{" "}
-          {repeatPasswordValid === true && <span className="text-green-500">✅</span>}
-          {repeatPasswordValid === false && repeatPassword !== "" && <span className="text-red-500">❌</span>}
-          </label>
-          <div className="relative">
-            <input
-              type={showRepeatPassword ? "text" : "password"}
-              placeholder="Répétez le mot de passe"
-              value={repeatPassword}
-              onChange={(e) => setRepeatPassword(e.target.value)}
-              className="border p-2 rounded w-full pr-10 focus:outline-none focus:ring-1 focus:ring-blue-600 placeholder:text-xs"
-              required
-            />
-            <button
-              type="button"
-              tabIndex={-1}
-              onClick={() => setShowRepeatPassword(!showRepeatPassword)}
-              className="absolute inset-y-0 right-0 pr-2 flex items-center"
-            >
-              <Image
-                src={showRepeatPassword ? "/images/svg/password-eyes-on.svg" : "/images/svg/password-eyes-off.svg"}
-                alt="Afficher/Cacher"
-                width={20}
-                height={20}
-              />
-            </button>
-          </div>
-        </div>
-
-        {/* Feedback messages */}
+        <PasswordInput
+          value={repeatPassword}
+          onChange={setRepeatPassword}
+          label="Confirmer le mot de passe"
+          placeholder="Répétez le mot de passe"
+        />
         {errorMsg && <p className="text-red-500 text-sm">{errorMsg}</p>}
         {successMsg && <p className="text-green-500 text-sm">{successMsg}</p>}
-
         <button
           type="submit"
           disabled={submitting}
-          className={`self-center bg-blue-600 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:bg-blue-700 ${
-            submitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
+          className={`self-center bg-blue-600 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:bg-blue-800 ${
+            submitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-800"
           }`}
         >
           {submitting ? "Envoi en cours..." : "S'inscrire"}

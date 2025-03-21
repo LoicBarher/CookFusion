@@ -9,11 +9,13 @@ export default function Form() {
   const [isVegetarian, setIsVegetarian] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
+  const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
+    setSubmitting(true);
     try {
       const response = await fetch(
         `/api/recipes?count=${count}&vegetarian=${isVegetarian}`
@@ -27,18 +29,19 @@ export default function Form() {
       console.error(err);
       setError("Erreur lors de la récupération des recettes");
     } finally {
+      setSubmitting(false);
       setLoading(false);
     }
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md mt-2">
       <h3 className="text-2xl font-bold mb-6 text-blue-800">
         Étape 1 : Je choisis mes recettes 💡🍔
       </h3>
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         <div className="flex flex-col">
-          <label className="text-base font-medium text-gray-700">
+          <label className="text-base font-medium  text-gray-700">
             Nombre de recettes
           </label>
           <input
@@ -60,7 +63,7 @@ export default function Form() {
             type="checkbox"
             checked={isVegetarian}
             onChange={(e) => setIsVegetarian(e.target.checked)}
-            className="h-5 w-5 text-blue-600"
+            className="h-5 w-5 text-blue-600 focus:outline-none focus:scale-105 hover:cursor-pointer"
           />
           <label className="text-base font-medium text-gray-700">
           Végétarien uniquement 🌿
@@ -68,10 +71,15 @@ export default function Form() {
         </div>
         <button
           type="submit"
-          className="self-center bg-blue-600 text-white py-2 px-4 min-w-[150px] rounded hover:bg-blue-800 transition-colors"
+          disabled={submitting}
+          className={`self-center bg-blue-600 text-white py-2 px-4 min-w-36 rounded hover:bg-blue-800 focus:outline-none focus:bg-blue-800 transition-colors ${
+            submitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-800"
+          }`}
         >
-          {"C'est parti !"}
+          {submitting ? "Recherche en cours..." : "C'est parti !"}
         </button>
+
+
       </form>
       {loading && (
   <div className="flex flex-col justify-center items-center mt-6">
