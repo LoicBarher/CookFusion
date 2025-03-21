@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabaseServerClient";
+import { supabaseServerClient } from "@/lib/server";
 
 export async function GET(request: Request) {
-  console.log("GET est bien appelé")
   const { searchParams } = new URL(request.url);
   const field = searchParams.get("field");
   const value = searchParams.get("value");
@@ -20,6 +19,8 @@ export async function GET(request: Request) {
       { status: 400 }
     );
   }
+
+  const supabase = supabaseServerClient();
 
   const { data, error } = await supabase
     .from("profiles")

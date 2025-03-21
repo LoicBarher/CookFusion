@@ -59,11 +59,11 @@ export default function Results({ onIncrement, onDecrement, onReplaceRecipe }: R
                     height={200}
                     className="w-full h-auto object-cover rounded"
                   />
-                  <h3 className="mt-2 text-2xl font-bold tracking-wide text-gray-800">
+                  <h3 className="mt-2 text-xl font-bold tracking-wide text-gray-800">
                     {recipe.titre}
                   </h3>
                   <div className="mt-2">
-                    <ul className="text-sm text-gray-700">
+                    <ul className="text-sm text-gray-600">
                       {Object.entries(recipe.ingredients).map(([key, value]) => {
                         if (key === "condiments") {
                           return <li key={key}>{key}: {value}</li>;
@@ -94,7 +94,7 @@ export default function Results({ onIncrement, onDecrement, onReplaceRecipe }: R
                     href={recipe.lien}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block mt-4 text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition-colors"
+                    className="block mt-4 text-center bg-blue-600 hover:bg-blue-800 text-white py-2 rounded transition-colors"
                   >
                     Voir la recette
                   </a>

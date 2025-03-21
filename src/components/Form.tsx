@@ -15,7 +15,6 @@ export default function Form() {
     setLoading(true);
     setError("");
     try {
-      console.log(`Fetching /api/recipes?count=${count}&vegetarian=${isVegetarian}`);
       const response = await fetch(
         `/api/recipes?count=${count}&vegetarian=${isVegetarian}`
       );
@@ -34,12 +33,12 @@ export default function Form() {
 
   return (
     <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
-      <h3 className="text-2xl font-bold text-gray-800 mb-4">
-        Étape 1 : Je choisis mes recettes 🍔🍕💡
+      <h3 className="text-2xl font-bold mb-6 text-blue-800">
+        Étape 1 : Je choisis mes recettes 💡🍔
       </h3>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         <div className="flex flex-col">
-          <label className="font-medium text-gray-700">
+          <label className="text-base font-medium text-gray-700">
             Nombre de recettes
           </label>
           <input
@@ -53,7 +52,7 @@ export default function Form() {
               setCount("1");
             }
           }}
-            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-600"
           />
         </div>
         <div className="flex items-center gap-2">
@@ -63,19 +62,19 @@ export default function Form() {
             onChange={(e) => setIsVegetarian(e.target.checked)}
             className="h-5 w-5 text-blue-600"
           />
-          <label className="text-gray-700 font-medium">
-            Végétarien uniquement
+          <label className="text-base font-medium text-gray-700">
+          Végétarien uniquement 🌿
           </label>
         </div>
         <button
           type="submit"
-          className="self-center bg-blue-600 text-white py-2 px-4 min-w-[150px] rounded hover:bg-blue-700 transition-colors"
+          className="self-center bg-blue-600 text-white py-2 px-4 min-w-[150px] rounded hover:bg-blue-800 transition-colors"
         >
           {"C'est parti !"}
         </button>
       </form>
       {loading && (
-  <div className="flex flex-col justify-center items-center mt-4">
+  <div className="flex flex-col justify-center items-center mt-6">
     <Image
       src="/loader.gif"
       alt="Chargement"
@@ -83,7 +82,7 @@ export default function Form() {
       height={48}
       className="animate-spin"
     />
-    <p className="mt-2 text-gray-600 text-sm">Chargement en cours...</p>
+    <p className="mt-2 text-gray-700 text-sm">Chargement en cours...</p>
   </div>
 )}
 {error && (

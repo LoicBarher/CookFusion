@@ -1,5 +1,5 @@
 import { Recipe } from "@/context/recipesContext";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/client";
 
 // export async function getRecipes(): Promise<Recipe[]> {
 //   const { data, error } = await supabase
@@ -24,7 +24,6 @@ export async function getFilteredRecipes(count: number, isVegetarian: boolean): 
   }
   
   const { data, error } = await query;
-  console.log("data", data);
   if(error) {
     console.error("Erreur lors de la récupération des recettes filtrées", error);
     return [];

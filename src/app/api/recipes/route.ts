@@ -9,7 +9,6 @@ export async function GET(request: Request) {
 
   try {
     const recipes = await getFilteredRecipes(count, vegetarian);
-    console.log("Recipes fetched:", recipes);
     return NextResponse.json(
       { recettes: recipes },
       { status: 200 }

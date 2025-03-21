@@ -93,11 +93,11 @@ export default function ShoppingList() {
 
   return (
     <div className="max-w-3xl mx-auto bg-zinc-50 p-6 rounded-lg shadow-lg mt-6">
-      <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">Étape 2 : Je consulte ma liste des courses optimisée ! 🛒✨</h2>
+      <h2 className="text-2xl font-bold mb-6 text-blue-800">Étape 2 : Je consulte ma liste des courses optimisée ! 🛒</h2>
       {Object.keys(shoppingList).length === 0 ? (
-        <p className="text-gray-600">Aucun ingrédient à afficher</p>
+        <p className="text-gray-600 italic">Aucun ingrédient à afficher</p>
       ) : (
-        <ul className="space-y-2 text-gray-700">
+        <ul className="space-y-2 text-gray-600">
           {Object.entries(shoppingList).map(([ingredient, data]) => {
             let displayValue = "";
             if (data.type === "number") {

@@ -1,7 +1,7 @@
 "use client";
 import { JSX } from "react";
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/client";
 import type { Session, User as SupabaseUser, AuthError, AuthChangeEvent } from "@supabase/supabase-js";
 
 // Définition de l'utilisateur de l'application.

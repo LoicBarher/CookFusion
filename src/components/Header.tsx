@@ -25,8 +25,8 @@ export default function Header() {
           <Image
             src="/images/svg/homepage.svg"
             alt="Homepage"
-            width={25}
-            height={25}
+            width={50}
+            height={50}
             className="transition-all group-hover:brightness-75"
           />
           {/* Titre visible à partir de sm (640px) */}
